@@ -1,0 +1,363 @@
+{
+	"info": {
+		"_postman_id": "87339a2b-3dc8-47d4-a7a3-eabdfd5df442",
+		"name": "Tech Mobiles",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21418075"
+	},
+	"item": [
+		{
+			"name": "users apis",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Admin\",\r\n    \"email\":\"admin@gmail.com\",\r\n    \"image\": \"iamge.jpg\",\r\n    \"gender\": \"male\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/admin-login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"admin-login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "basic"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjJkMzNkMjUzOWUwZGJmYzNiNGZmMCIsImlhdCI6MTczOTc3Mjc4MiwiZXhwIjoxNzM5Nzc5OTgyfQ.hZDN4XYrvc207-bG2i8BQbBBL5LsJEEKgquyLtXJTRw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Galaxy Tab S9\",\r\n    \"price\": 799,\r\n    \"discounted_price\": 749,\r\n    \"inStock\": true,\r\n    \"ram\": 12,\r\n    \"screensize\": 8.7,\r\n    \"category\": \"tablet\",\r\n    \"storage\": 128,\r\n    \"cameraPixels\": 16,\r\n    \"model\": \"Tab S9\",\r\n    \"brand\": \"Samsung\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Galaxy S23 Ultra\",\r\n  \"price\": 1199,\r\n  \"discounted_price\": 1099,\r\n  \"inStock\": true,\r\n  \"ram\": 12,\r\n  \"screensize\": 6.7,\r\n  \"category\": \"smartphone\",\r\n  \"storage\": 256,\r\n  \"cameraPixels\": 108,\r\n  \"model\": \"S23 Ultra\",\r\n  \"brand\": \"Samsung\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Galaxy S23 Ultra\",\r\n  \"price\": 1199,\r\n  \"discounted_price\": 1099,\r\n  \"inStock\": true,\r\n  \"ram\": 12,\r\n  \"screensize\": 6.7,\r\n  \"category\": \"smartphone\",\r\n  \"storage\": 256,\r\n  \"cameraPixels\": 108,\r\n  \"model\": \"S23 Ultra\",\r\n  \"brand\": \"Samsung\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/filters?minPrice=1&maxPrice=1000&brand=Samsung&ram=8GB,6GB",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"filters"
+							],
+							"query": [
+								{
+									"key": "minPrice",
+									"value": "1"
+								},
+								{
+									"key": "maxPrice",
+									"value": "1000"
+								},
+								{
+									"key": "brand",
+									"value": "Samsung"
+								},
+								{
+									"key": "ram",
+									"value": "8GB,6GB"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"items\": [\r\n      {\r\n        \"productId\": \"67b6bf5c14b01966f1379d38\",\r\n        \"name\": \"Iphone 15\",\r\n        \"brand\": \"Apple\",\r\n        \"price\": 300,\r\n        \"quantity\": 2,\r\n        \"totalProductPrice\": 600,\r\n        \"color\": \"Default\",\r\n        \"size\": \"M\",\r\n        \"image\": \"https://ik.imagekit.io/1pw7c3gwl/uploads/apple-iphone-14-pro-max-1_AWr_SBSvH.jpg\"\r\n      },\r\n      {\r\n        \"productId\": \"67bfed925058ba8ce972ff59\",\r\n        \"name\": \"Iphone 15\",\r\n        \"brand\": \"Apple\",\r\n        \"price\": 280,\r\n        \"quantity\": 1,\r\n        \"color\": \"Default\",\r\n        \"totalProductPrice\": 200,\r\n        \"size\": \"M\",\r\n        \"image\": \"https://ik.imagekit.io/1pw7c3gwl/uploads/apple-iphone-14-pro-max-1_AWr_SBSvH.jpg\"\r\n      }\r\n    ],\r\n    \"totalPrice\": 900,\r\n    \"discountedPrice\": 800\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/order/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order by user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YzUzZmNkMjY2M2NiYWM2M2RjNmExNiIsImlhdCI6MTc0MTE1MDY3NSwiZXhwIjoxNzQxMTU3ODc1fQ.nX9ai0tMlK_slI-neu8Ujd2CPD0_eL3rYCPAXsrRBR0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"items\": [\r\n      {\r\n        \"productId\": \"67b6bf5c14b01966f1379d38\",\r\n        \"name\": \"Iphone 15\",\r\n        \"brand\": \"Apple\",\r\n        \"price\": 300,\r\n        \"quantity\": 2,\r\n        \"totalProductPrice\": 600,\r\n        \"color\": \"Default\",\r\n        \"size\": \"M\",\r\n        \"image\": \"https://ik.imagekit.io/1pw7c3gwl/uploads/apple-iphone-14-pro-max-1_AWr_SBSvH.jpg\"\r\n      },\r\n      {\r\n        \"productId\": \"67bfed925058ba8ce972ff59\",\r\n        \"name\": \"Iphone 15\",\r\n        \"brand\": \"Apple\",\r\n        \"price\": 280,\r\n        \"quantity\": 1,\r\n        \"color\": \"Default\",\r\n        \"totalProductPrice\": 200,\r\n        \"size\": \"M\",\r\n        \"image\": \"https://ik.imagekit.io/1pw7c3gwl/uploads/apple-iphone-14-pro-max-1_AWr_SBSvH.jpg\"\r\n      }\r\n    ],\r\n    \"totalPrice\": 900,\r\n    \"discountedPrice\": 800,\r\n    \"userId\": \"67c540ef2663cbac63dc6a1e\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/order/user-orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"user-orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin apis",
+			"item": [
+				{
+					"name": "total cards data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjJjYzViMmNkZGZkYTY4NjQ0OGZlMSIsImlhdCI6MTc0MTMyNzcxOSwiZXhwIjoxNzQxMzM0OTE5fQ.jmpfk3H_nkpcRjbF8BLSbjKFcIZ1RMQtHHyCJOg6T8Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/admin/totalCards",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"totalCards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "totalSalesRevenue",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjJjYzViMmNkZGZkYTY4NjQ0OGZlMSIsImlhdCI6MTc0MTMyNzcxOSwiZXhwIjoxNzQxMzM0OTE5fQ.jmpfk3H_nkpcRjbF8BLSbjKFcIZ1RMQtHHyCJOg6T8Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/admin/totalSalesRevenue",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"totalSalesRevenue"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
