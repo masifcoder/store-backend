@@ -6,6 +6,7 @@ const authMiddleware = async (req, res, next) => {
     try {
         // Check if Authorization header exists
         const authHeader = req.headers.authorization;
+
         if (!authHeader) {
             return res.status(401).json({ message: 'Authorization header missing' });
         }
