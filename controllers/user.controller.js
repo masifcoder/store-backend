@@ -82,7 +82,7 @@ const Login = async (req, res) => {
         if (passStatus === false) {
             return res.status(403).json({
                 status: "Fail",
-                errors: "username or password is incorrect p"
+                errors: "username or password is incorrect"
             });
         }
 
